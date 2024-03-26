@@ -1,0 +1,25 @@
+---
+title: "ev_1"
+author: "Luis G. Hernández"
+date: "2024-03-26"
+output: html_document
+---
+
+```{r echo=TRUE}
+library(tidyverse)
+```
+
+## Objetivo 1
+
+Esta es la realizacón de lo solicitado en la *evaluación de aprendizaje 1* bajo la lección *_Introducción a R Markdown_*
+
+```{r objetivo 1, echo=TRUE}
+
+mi_data<- tibble(peso_muestra = rnorm(500, mean = 80, sd = 1),
+                  talla_muestra = rnorm(500, mean = 1.65, sd = 0.1),
+                  imc_muestra = peso_muestra / talla_muestra ^ 2,
+                  sobrepeso_muestra = imc_muestra >= 25 & imc_muestra < 30,
+                  obesidad_muestra = imc_muestra > 30)
+
+```
+
