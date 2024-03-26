@@ -5,7 +5,7 @@ date: "2024-03-26"
 output: html_document
 ---
 
-```{r echo=TRUE}
+```{r echo = FALSE}
 library(tidyverse)
 ```
 
@@ -13,13 +13,17 @@ library(tidyverse)
 
 Esta es la realizacón de lo solicitado en la *evaluación de aprendizaje 1* bajo la lección *_Introducción a R Markdown_*
 
-```{r objetivo 1, echo=TRUE}
+En el primer chunk del objetivo 1 nos dedicamos a formar el marco de datos con el que vamos a trabajar (dataframe), utilizando la función _distribución normal_ (rnorm) para generar los datos necesarios para obtener el IMC de 500 individuos.
 
-mi_data<- tibble(peso_muestra = rnorm(500, mean = 80, sd = 1),
+```{r objetivo 1}
+
+mi_data <- tibble(peso_muestra = rnorm(500, mean = 80, sd = 1),
                   talla_muestra = rnorm(500, mean = 1.65, sd = 0.1),
                   imc_muestra = peso_muestra / talla_muestra ^ 2,
                   sobrepeso_muestra = imc_muestra >= 25 & imc_muestra < 30,
                   obesidad_muestra = imc_muestra > 30)
+
+## Pueden ver los datos generados si llaman la información "mi_data" en la consola, o pueden "imprimir" todos los datos si utilizan el comando print(mi_data, n = 500).
 
 ```
 
